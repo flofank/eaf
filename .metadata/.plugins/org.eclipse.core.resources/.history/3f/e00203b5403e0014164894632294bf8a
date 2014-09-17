@@ -1,0 +1,19 @@
+package edu.spring;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		BeanFactory factory = getBeanFactory();
+		MessageRenderer mr = (MessageRenderer) factory.getBean("renderer");
+		mr.render();
+	}
+	
+	private static BeanFactory getBeanFactory() {
+		return new XmlBeanFactory(new ClassPathResource("/helloConfig.xml"));
+	}
+
+}

@@ -1,0 +1,5 @@
+package edu.spring;
+
+public class HelloWorldProvider extends MessageProvider {
+
+}
